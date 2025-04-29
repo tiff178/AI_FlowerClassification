@@ -19,3 +19,11 @@ def classify_images(image_path):
   outcome = 'The Image belongs to ' + flower_names[np.argmax(result)] + ' with a score of ' + str(max(result)*100)
   return outcome
 
+uploaded_file = st.file_uploader('Upload an Image')
+if uploaded_file is not None:
+    with open(os.path.join('upload', uploaded_file.name), 'wb') as f: 
+       f.write(uploaded_file.getbuffer())
+    
+    st.image(uploaded_file, width = 200)
+
+st.markdown(classify_images(uploaded_file))

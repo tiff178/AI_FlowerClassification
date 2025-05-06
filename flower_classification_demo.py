@@ -5,7 +5,8 @@ import numpy as np
 import streamlit as st
 import tensorflow as tf
 
-st.header('Flower Classification Demo')
+# to run code: python -m streamlit run [file name (e.g. flower_classification_demo.py)]
+st.header('🌹 Flower Classification Demo 🌹')
 flower_names = ['daisy', 'dandelion', 'rose', 'sunflower', 'tulip']
 
 model = load_model('Flower_Recog_Model.h5')
